@@ -57,11 +57,7 @@ public class StringListImpl implements StringList {
         if (index == -1) {
             throw new ElementNotFoundException();
         }
-        if (index == size) {
-            storage[size--] = null;
-            return item;
-        }
-        System.arraycopy(storage, index +1,storage,index,size-index);
+        remove(item);
         return item;
     }
 
